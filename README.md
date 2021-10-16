@@ -25,7 +25,7 @@ Se utilizo Laravel con MVC como patron de arquitectura para el backend y Flutter
 5) Abrir la terminal y ejecutar "php artisan migrate:fresh --seed"
 6) Para crear el servidor local ejecutar "php artisan serve --host=ip --port=8001"
 
-## Pasos para usan el proyecto en flutter
+## Pasos para usar el proyecto en flutter
 1) Abrir la terminar en pubsec.yaml y ejecutar "flutter pub get"
 2) Ir a lib/env.dart y cambiar el host='http://ip:8001';
 3) Correr el proyecto, si usamos chrome usar "flutter run -d chrome --web-renderer html"
