@@ -14,4 +14,5 @@ class Memo extends Model
         'content',
         'user_id'
     ];
+
 }
