@@ -23,7 +23,7 @@ Se utilizo Laravel con MVC como patron de arquitectura para el backend y Flutter
 4) Open terminal and run "php artisan storage: link"
 5) Inside .env configure the credentials of the db
 6) Open terminal and run "php artisan migrate: fresh --seed"
-7) To create the local server run "php artisan serve --host = ip --port = 8001"
+7) To create the local server run "php artisan serve --host=ip --port=8001"
 
 ## Pasos para utilizar el proyecto en Laravel
 1) Abrir la terminal y ejecutar "composer install"
@@ -36,7 +36,7 @@ Se utilizo Laravel con MVC como patron de arquitectura para el backend y Flutter
 
 ## Steps to use the project in flutter
 1) Open the terminate in pubsec.yaml and run "flutter pub get"
-2) Go to lib / env.dart and change the host = 'http: // ip: 8001';
+2) Go to lib / env.dart and change the host = 'http://ip:8001';
 3) Run the project, if we use chrome use "flutter run -d chrome --web-renderer html"
 
 ## Pasos para utilizar el proyecto en flutter
