@@ -16,7 +16,7 @@ Laravel was used with MVC as the architecture pattern for the backend and Flutte
 ## Entorno de desarrollo utilizado
 Se utilizo Laravel con MVC como patron de arquitectura para el backend y Flutter con 3 capas como patron de arquitectura para frontend
 
-## Pasos para usar el proyecto en Laravel
+## Pasos para utilizar el proyecto en Laravel
 1) Abrir la terminal y ejecutar "composer install"
 2) Copiar .env.example como .env
 3) Abrir la terminal y ejecutar "php artisan key:generate"
@@ -25,7 +25,7 @@ Se utilizo Laravel con MVC como patron de arquitectura para el backend y Flutter
 5) Abrir la terminal y ejecutar "php artisan migrate:fresh --seed"
 6) Para crear el servidor local ejecutar "php artisan serve --host=ip --port=8001"
 
-## Pasos para usar el proyecto en flutter
+## Pasos para utilizar el proyecto en flutter
 1) Abrir la terminar en pubsec.yaml y ejecutar "flutter pub get"
 2) Ir a lib/env.dart y cambiar el host='http://ip:8001';
 3) Correr el proyecto, si usamos chrome usar "flutter run -d chrome --web-renderer html"
