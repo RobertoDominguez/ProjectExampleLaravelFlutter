@@ -1,4 +1,4 @@
-import 'package:flutter_example_3_layers/Data/User.dart';
+import 'package:flutter_example_3_layers/Entities/User.dart';
 
 class UserSession{
   static final UserSession _instance = UserSession._internal();

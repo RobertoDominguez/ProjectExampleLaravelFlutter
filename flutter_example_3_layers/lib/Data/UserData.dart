@@ -1,22 +1,19 @@
 import 'dart:convert';
 
 import 'package:flutter_example_3_layers/Data/DataResponse.dart';
+import 'package:flutter_example_3_layers/Entities/User.dart';
 import 'package:flutter_example_3_layers/env.dart';
 import 'package:http/http.dart' as http;
 
-class User{
-  String id='';
-  String name='';
-  String email='';
-  String password='';
-  String token='';
+class UserData{
 
-  Future<DataResponse> login() async{
+
+  Future<DataResponse> login(String email,String password) async{
     DataResponse dataResponse=new DataResponse();
     try{
       var url = Uri.parse(host+'/api/login');
       final http.Response response =await http.post(url,
-          body: {'email': this.email, 'password': this.password});
+          body: {'email': email, 'password': password});
 
       print(response.body);
       const JsonDecoder decoder = const JsonDecoder();
@@ -42,13 +39,13 @@ class User{
     return dataResponse;
   }
 
-  Future<DataResponse> signup() async{
+  Future<DataResponse> signup(String name,String email,String password,String passwordConfirm) async{
     DataResponse dataResponse=new DataResponse();
 
     try{
       var url = Uri.parse(host+'/api/signup');
       final http.Response response =await http.post(url,
-          body: {'name': this.name,'email': this.email, 'password': this.password , 'password_confirm': this.password});
+          body: {'name': name,'email': email, 'password': password , 'password_confirm': passwordConfirm});
 
       print(response.body);
       const JsonDecoder decoder = const JsonDecoder();

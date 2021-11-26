@@ -1,35 +1,33 @@
 import 'package:flutter_example_3_layers/Data/DataResponse.dart';
-import 'package:flutter_example_3_layers/Data/Memo.dart';
+import 'package:flutter_example_3_layers/Data/MemoData.dart';
+import 'package:flutter_example_3_layers/Entities/Memo.dart';
 import 'package:flutter_example_3_layers/Session/UserSession.dart';
 
 class MemoBusiness{
-  Memo memo=new Memo();
+  MemoData memoData=new MemoData();
 
   Future<DataResponse> index() async{
     List<Memo> items=List.generate(0, (index) => new Memo());
-    DataResponse dataResponse=await memo.index(UserSession.user.token);
+    DataResponse dataResponse=await memoData.index(UserSession.user.token);
     items=dataResponse.data;
     return dataResponse;
   }
 
   Future<DataResponse> store(String title,String content) async{
-    this.memo.title=title;
-    this.memo.content=content;
-    DataResponse dataResponse=await memo.store(UserSession.user.token);
+    Memo memo=new Memo();
+    memo.title=title;
+    memo.content=content;
+    DataResponse dataResponse=await memoData.store(UserSession.user.token,memo);
     return dataResponse;
   }
 
-  Future<DataResponse> update(String id,String title,String content) async{
-    this.memo.id=id;
-    this.memo.title=title;
-    this.memo.content=content;
-    DataResponse dataResponse=await memo.update(UserSession.user.token);
+  Future<DataResponse> update(Memo memo) async{
+    DataResponse dataResponse=await memoData.update(UserSession.user.token,memo);
     return dataResponse;
   }
 
   Future<DataResponse> delete(String id) async{
-    this.memo.id=id;
-    return await memo.delete(UserSession.user.token);
+    return await memoData.delete(UserSession.user.token,id);
   }
 
 

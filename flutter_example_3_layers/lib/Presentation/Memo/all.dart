@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_example_3_layers/Business/MemoBusiness.dart';
 import 'package:flutter_example_3_layers/Data/DataResponse.dart';
-import 'package:flutter_example_3_layers/Data/Memo.dart';
+import 'package:flutter_example_3_layers/Entities/Memo.dart';
 import 'package:flutter_example_3_layers/Presentation/Layouts/header.dart';
 import 'package:flutter_example_3_layers/Presentation/Memo/edit.dart';
 import 'package:flutter_example_3_layers/assets/widgets/dialog.dart';
@@ -122,7 +122,7 @@ class __AllState extends State<All>{
                           subtitle: Text(memo.content),
                         ),
                         onTap: (){
-                          Navigator.pushNamed(context, memosEditRoute(),arguments: EditMemoArguments(memo.id,memo.title,memo.content));
+                          Navigator.pushNamed(context, memosEditRoute(),arguments: EditMemoArguments(memo));
                         },
                       ),
                     ),
@@ -135,7 +135,7 @@ class __AllState extends State<All>{
                             color: Style1().primaryColor(),
                             icon: const Icon(Icons.edit),
                             onPressed: () {
-                              Navigator.pushNamed(context, memosEditRoute(),arguments: EditMemoArguments(memo.id,memo.title,memo.content));
+                              Navigator.pushNamed(context, memosEditRoute(),arguments: EditMemoArguments(memo));
                             },
                           ),
                           SizedBox(width: 8,),

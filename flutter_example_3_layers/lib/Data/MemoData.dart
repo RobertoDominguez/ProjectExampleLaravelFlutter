@@ -1,13 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter_example_3_layers/Data/DataResponse.dart';
+import 'package:flutter_example_3_layers/Entities/Memo.dart';
 import 'package:flutter_example_3_layers/env.dart';
 import 'package:http/http.dart' as http;
 
-class Memo{
-  String id='';
-  String title='';
-  String content='';
+class MemoData{
 
   Future<DataResponse> index(String token) async{
     DataResponse dataResponse=new DataResponse();
@@ -44,13 +42,13 @@ class Memo{
     return dataResponse;
   }
 
-  Future<DataResponse> store(String token) async{
+  Future<DataResponse> store(String token,Memo memo) async{
     DataResponse dataResponse=new DataResponse();
     try {
       var url = Uri.parse(host+'/api/memos');
       final http.Response response =await http.post(url,
         headers: { 'Accept' : 'application/json' , 'Authorization' : 'Bearer '+token },
-        body: { 'title': title,'content':content}
+        body: { 'title': memo.title,'content':memo.content}
       );
 
       print(response.body);
@@ -76,11 +74,11 @@ class Memo{
     return dataResponse;
   }
 
-  Future<DataResponse> show(String token) async{
+  Future<DataResponse> show(String token,String id) async{
     DataResponse dataResponse=new DataResponse();
 
     try {
-      var url = Uri.parse(host+'/api/memos/'+this.id);
+      var url = Uri.parse(host+'/api/memos/'+id);
       final http.Response response =await http.get(url,
           headers: { 'Accept' : 'application/json' , 'Authorization' : 'Bearer '+token },
       );
@@ -107,15 +105,15 @@ class Memo{
     return dataResponse;
   }
 
-  Future<DataResponse> update(String token) async{
+  Future<DataResponse> update(String token,Memo memo) async{
     DataResponse dataResponse=new DataResponse();
 
     try {
-      var url = Uri.parse(host+'/api/memos/'+id);
+      var url = Uri.parse(host+'/api/memos/'+memo.id);
       final http.Response response =await http.put(url,
           headers: { 'Accept' : 'application/json' , 'Authorization' : 'Bearer '+token ,'Content-Type':'application/x-www-form-urlencoded'},
           encoding: Encoding.getByName('utf-8'),
-          body: {'title':title,'content':content}
+          body: {'title':memo.title,'content':memo.content}
       );
 
       print(response.body);
@@ -140,7 +138,7 @@ class Memo{
     return dataResponse;
   }
 
-  Future<DataResponse> delete(String token) async{
+  Future<DataResponse> delete(String token,String id) async{
     DataResponse dataResponse=new DataResponse();
     try {
       var url = Uri.parse(host+'/api/memos/'+id);

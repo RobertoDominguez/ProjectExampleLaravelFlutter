@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_example_3_layers/Business/MemoBusiness.dart';
 import 'package:flutter_example_3_layers/Data/DataResponse.dart';
+import 'package:flutter_example_3_layers/Entities/Memo.dart';
 import 'package:flutter_example_3_layers/assets/widgets/buttons.dart';
 import 'package:flutter_example_3_layers/assets/widgets/dialog.dart';
 import 'package:flutter_example_3_layers/assets/widgets/styles.dart';
@@ -9,11 +10,9 @@ import 'package:flutter_example_3_layers/assets/widgets/styles.dart';
 import '../../main.dart';
 
 class EditMemoArguments {
-  final String id;
-  final String title;
-  final String content;
+  final Memo memo;
 
-  EditMemoArguments(this.id,this.title,this.content);
+  EditMemoArguments(this.memo);
 }
 
 class EditMemo extends StatefulWidget{
@@ -31,9 +30,7 @@ class __EditMemoState extends State<EditMemo>{
 
   final controllerTitle = TextEditingController();
   final controllerContent = TextEditingController();
-  String id="";
-  String title = "";
-  String content = "";
+  Memo memo=new Memo();
 
   @override
   void initState() {
@@ -44,17 +41,15 @@ class __EditMemoState extends State<EditMemo>{
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as EditMemoArguments;
-    this.id=args.id;
-    title=args.title;
-    content=args.content;
-    controllerTitle.text=args.title;
-    controllerContent.text=args.content;
+    this.memo=args.memo;
+    controllerTitle.text=args.memo.title;
+    controllerContent.text=args.memo.content;
 
     controllerTitle.addListener(() {
-      title = controllerTitle.text;
+      memo.title = controllerTitle.text;
     });
     controllerContent.addListener(() {
-      content = controllerContent.text;
+      memo.content = controllerContent.text;
     });
     return Scaffold(
       body: SafeArea(
@@ -130,7 +125,7 @@ class __EditMemoState extends State<EditMemo>{
   Future<void> update() async{
     showLoadingIndicator(context,'Actualizando nota...');
 
-    DataResponse dataResponse=await memoBusiness.update(id,title, content);
+    DataResponse dataResponse=await memoBusiness.update(this.memo);
 
     setState(() {
       hideOpenDialog(context);
