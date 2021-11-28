@@ -13,6 +13,7 @@ class UserData{
     try{
       var url = Uri.parse(host+'/api/login');
       final http.Response response =await http.post(url,
+          headers: { 'Accept' : 'application/json' },
           body: {'email': email, 'password': password});
 
       print(response.body);
@@ -45,6 +46,7 @@ class UserData{
     try{
       var url = Uri.parse(host+'/api/signup');
       final http.Response response =await http.post(url,
+          headers: { 'Accept' : 'application/json' },
           body: {'name': name,'email': email, 'password': password , 'password_confirm': passwordConfirm});
 
       print(response.body);
