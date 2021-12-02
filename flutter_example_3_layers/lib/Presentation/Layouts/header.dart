@@ -31,7 +31,7 @@ class __SideNavState extends State<SideNav>{
           children: [
             Padding(
               padding: EdgeInsets.all(16.0),
-              child: Text('Notas de: '+UserSession.user.name,style: TextStyle(fontSize: 21,color: Style1().primaryColor()),),
+              child: Text('Notas de: '+UserSession.user.name,style: TextStyle(fontSize: 21,color: Style().primaryColor()),),
             ),
             Divider(
               color: Colors.grey.shade400,
@@ -67,13 +67,13 @@ class __SideNavState extends State<SideNav>{
 
 PreferredSizeWidget headerAppBar(BuildContext context){
   return AppBar(
-    backgroundColor: Style1().backgroundColor(),
+    backgroundColor: Style().backgroundColor(),
     elevation: 0,
     titleSpacing: 0.0,
     leading: Builder(
       builder: (BuildContext context) {
         return IconButton(
-          color: Style1().primaryColor(),
+          color: Style().primaryColor(),
           icon: const Icon(Icons.menu),
           onPressed: () {
             Scaffold.of(context).openDrawer();
@@ -96,7 +96,7 @@ Widget searchBar(BuildContext context){
   return Column(
     children: [
       CupertinoSearchTextField(
-        backgroundColor: Style1().backgroundColor(),
+        backgroundColor: Style().backgroundColor(),
         onSubmitted: (String text){
 
         } ,
@@ -111,17 +111,17 @@ Widget searchBar(BuildContext context){
 
 Widget navigationHeader(BuildContext context,String title){
   return Container(
-    color: Style1().seccondaryColor(),
+    color: Style().seccondaryColor(),
     width: MediaQuery.of(context).size.width,
     height: 50,
     child: Row(
       children: [
         SizedBox(width: 20,),
-        Icon(Icons.home,color: Style1().primaryColor(),),
+        Icon(Icons.home,color: Style().primaryColor(),),
         SizedBox(width: 20,),
-        Icon(Icons.chevron_right,color: Style1().uiColor(),),
+        Icon(Icons.chevron_right,color: Style().uiColor(),),
         SizedBox(width: 20,),
-        Text(title,style: TextStyle(color: Style1().primaryColor(),fontSize: 20 ),)
+        Text(title,style: TextStyle(color: Style().primaryColor(),fontSize: 20 ),)
       ],
     ),
   );

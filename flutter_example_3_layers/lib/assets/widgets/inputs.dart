@@ -18,7 +18,7 @@ class CustomInputField extends StatelessWidget {
         elevation: 5.0,
         borderRadius: BorderRadius.all(
             Radius.circular(20.0)),
-        color: Style1().textColorPrimary(),
+        color: Style().textColorPrimary(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[

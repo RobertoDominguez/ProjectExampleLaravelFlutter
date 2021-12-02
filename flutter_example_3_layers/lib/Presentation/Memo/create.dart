@@ -84,7 +84,7 @@ class __CreateMemoState extends State<CreateMemo>{
           children: [
             SizedBox(height: 5,),
             Center(
-              child: Text('Titulo', style: TextStyle(fontSize: 21,color: Style1().primaryColor()),),
+              child: Text('Titulo', style: TextStyle(fontSize: 21,color: Style().primaryColor()),),
             ),
             SizedBox(height: 5,),
             TextField(
@@ -92,7 +92,7 @@ class __CreateMemoState extends State<CreateMemo>{
             ),
             SizedBox(height: 5,),
             Center(
-              child: Text('Contenido', style: TextStyle(fontSize: 21,color: Style1().primaryColor()),),
+              child: Text('Contenido', style: TextStyle(fontSize: 21,color: Style().primaryColor()),),
             ),
             SizedBox(height: 5,),
             TextField(

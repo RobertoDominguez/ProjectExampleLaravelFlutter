@@ -11,8 +11,8 @@ Widget buttonPrimary(BuildContext context,String text,VoidCallback action) {
       onPressed: () async {
         action();
       },
-      color: Style1().primaryColor(),
-      disabledColor: Style1().primaryColor(),
+      color: Style().primaryColor(),
+      disabledColor: Style().primaryColor(),
       disabledTextColor: Colors.white,
       textColor: Colors.white,
       shape: RoundedRectangleBorder(

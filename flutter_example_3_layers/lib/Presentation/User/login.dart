@@ -42,7 +42,7 @@ class __LoginState extends State<Login>{
       pass = controllerPass.text;
     });
     return Scaffold(
-      backgroundColor: Style1().backgroundColor(),
+      backgroundColor: Style().backgroundColor(),
       body: SafeArea(
         child: SizedBox.expand(
           child: Stack(

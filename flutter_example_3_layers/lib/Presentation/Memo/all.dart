@@ -33,7 +33,7 @@ class __AllState extends State<All>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Style1().backgroundColor(),
+      backgroundColor:Style().backgroundColor(),
       appBar: headerAppBar(context),
       drawer: SideNav(),
       floatingActionButton:  FloatingActionButton(
@@ -132,7 +132,7 @@ class __AllState extends State<All>{
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           IconButton(
-                            color: Style1().primaryColor(),
+                            color: Style().primaryColor(),
                             icon: const Icon(Icons.edit),
                             onPressed: () {
                               Navigator.pushNamed(context, memosEditRoute(),arguments: EditMemoArguments(memo));
@@ -140,7 +140,7 @@ class __AllState extends State<All>{
                           ),
                           SizedBox(width: 8,),
                           IconButton(
-                            color: Style1().primaryColor(),
+                            color: Style().primaryColor(),
                             icon: const Icon(Icons.delete),
                             onPressed: () async{
                               showAlertDialogOptions(context,"Eliminar Nota","¿Estas seguro que deseas eliminar la nota?",

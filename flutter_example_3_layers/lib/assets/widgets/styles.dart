@@ -1,28 +1,72 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_example_3_layers/env.dart';
 
-class Style1{
+class Style{
+
   Color textColorPrimary(){
-    return Colors.black;
+    Color color=Colors.black;
+    switch(style) {
+      case '1': {
+        color=Colors.black;
+      }
+      break;
+    }
+    return color;
   }
 
   Color textColorSeccondary(){
-    return Colors.white;
+    Color color=Colors.white;
+    switch(style) {
+      case '1': {
+        color=Colors.white;
+      }
+      break;
+    }
+    return color;
   }
 
   Color backgroundColor(){
-    return Colors.white;
+    Color color=Colors.white;
+    switch(style) {
+      case '1': {
+        color=Colors.white;
+      }
+      break;
+    }
+    return color;
   }
 
   Color primaryColor(){
-    return Colors.black54;
+    Color color=Colors.black54;
+    switch(style) {
+      case '1': {
+        color=Colors.black54;
+      }
+      break;
+    }
+    return color;
   }
 
   Color seccondaryColor(){
-    return Colors.black12;
+    Color color=Colors.black12;
+    switch(style) {
+      case '1': {
+        color=Colors.black12;
+      }
+      break;
+    }
+    return color;
   }
 
   Color uiColor(){
-    return Colors.red;
+    Color color=Colors.red;
+    switch(style) {
+      case '1': {
+        color=Colors.red;
+      }
+      break;
+    }
+    return color;
   }
 
 }
